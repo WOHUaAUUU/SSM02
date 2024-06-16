@@ -1,0 +1,30 @@
+{
+  "Column": [
+    {
+      "Witness_Notice_No": "Witness_Notice_No"
+    },
+    {
+      "Remarks": "Remarks"
+    }
+  ],
+  "DataBody": "Main",
+  "PrimaryKey": "Witness_Notice_No",
+  "Table/View": "dbo.MQM_User_Witness_Plan_Notice_Frm",
+  "Type": "INSERTORUPDATE"
+},
+{
+"Report_Comtent": "Report_Comtent"
+}
+],
+"DataBody": "Details2",
+"FileTransfer": {
+"Content": "Report_Comtent",
+"Name": "Report_Name",
+"NamePrefix": "Witness_Notice_No",
+"Path": "C:\\附件\\见证通知_附件",
+"Type": "Base64StringToFile"
+},
+"PrimaryKey": "Witness_Notice_No,Record_No,Report_Name",
+"Table/View": "dbo.MQM_User_Witness_Plan_Notice_Frm_F",
+"Type": "INSERTORUPDATE"
+}
