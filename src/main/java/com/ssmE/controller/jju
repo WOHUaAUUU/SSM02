@@ -1,30 +1,64 @@
 {
-  "Column": [
+  "Name": "东汽--MES--MES用户见证通知",
+  "Database": {
+    "Type": "SQLServer",
+    "Connection": "Persist Security Info=False; User ID=BISADMIN; Password=BISADMIN; Initial Catalog=DQQMS; Data source=172.18.231.212"
+  },
+  "DataSource":
+  [
     {
-      "Witness_Notice_No": "Witness_Notice_No"
+      "Type": "INSERTORUPDATE",
+      "DataBody": "Main",
+      "Table/View": "dbo.MQM_User_Witness_Plan_Notice_Frm",
+      "Column": [
+        {"Witness_Notice_No":"Witness_Notice_No" },
+        {"Create_Unit":"Create_Unit" },
+        {"Creater":"Creater" },
+        {"Create_Time":"Create_Time" },
+        {"MO_No":"MO_No" },
+        {"Project_No":"Project_No" },
+        {"Project_Name":"Project_Name" },
+        {"Material_No":"Material_No" },
+        {"Material_Name":"Material_Name" },
+        {"Drawing_No":"Drawing_No" },
+        {"Quantity":"Quantity" },
+        {"Witness_Place":"Witness_Place" },
+        {"Witness_Time_Start":"Witness_Time_Start" },
+        {"Witness_Time_End":"Witness_Time_End" },
+        {"Witness_Contact":"Witness_Contact" },
+        {"Contact_Tel":"Contact_Tel" },
+        {"chercker3":"chercker3" },
+        {"chercker2":"chercker2" },
+        {"chercker10":"chercker10" }
+      ],
+      "PrimaryKey": "Witness_Notice_No"
     },
     {
-      "Remarks": "Remarks"
+      "Type": "INSERTORUPDATE",
+      "DataBody": "Details",
+      "Table/View": "dbo.MQM_User_Witness_Plan_Notice_Frm_D",
+      "Column": [
+        {"Witness_Notice_No":"Witness_Notice_No" },
+        {"Record_No":"Record_No" },
+        {"Witness_Project":"Witness_Project" },
+        {"P_Witness_Time_Start":"P_Witness_Time_Start" },
+        {"P_Witness_Time_End":"P_Witness_Time_End" },
+        {"Quality_Activity_JZ1":"Quality_Activity_JZ1" },
+        {"Quality_Activity_JZ2":"Quality_Activity_JZ2" },
+        {"Quality_Activity_User":"Quality_Activity_User" }
+      ],
+      "PrimaryKey": "Witness_Notice_No,Record_No"
+    },
+    {
+      "Type": "INSERTORUPDATE",
+      "DataBody": "Details2",
+      "Table/View": "BISADMIN.PQC_BILL_WitnessPlanLIST",
+      "Column": [
+        {"BIS_ID":"BIS_ID" },
+        {"Witness_Notice_No":"Witness_Notice_No" },
+        {"Product_ID":"Product_ID" }
+      ],
+      "PrimaryKey": "Witness_Notice_No,Product_ID"
     }
-  ],
-  "DataBody": "Main",
-  "PrimaryKey": "Witness_Notice_No",
-  "Table/View": "dbo.MQM_User_Witness_Plan_Notice_Frm",
-  "Type": "INSERTORUPDATE"
-},
-{
-"Report_Comtent": "Report_Comtent"
-}
-],
-"DataBody": "Details2",
-"FileTransfer": {
-"Content": "Report_Comtent",
-"Name": "Report_Name",
-"NamePrefix": "Witness_Notice_No",
-"Path": "C:\\附件\\见证通知_附件",
-"Type": "Base64StringToFile"
-},
-"PrimaryKey": "Witness_Notice_No,Record_No,Report_Name",
-"Table/View": "dbo.MQM_User_Witness_Plan_Notice_Frm_F",
-"Type": "INSERTORUPDATE"
+  ]
 }
