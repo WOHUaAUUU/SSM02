@@ -5,6 +5,7 @@ import com.ssmE.label.server.Service;
 
 import java.util.List;
 
+@org.springframework.stereotype.Service
 public class ServiceImpl implements Service {
     @Override
     public List<User> showall() {

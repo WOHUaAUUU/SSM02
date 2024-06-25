@@ -3,10 +3,12 @@ package com.ssmE.label.dao.impl;
 
 import com.ssmE.label.dao.UserDao;
 import com.ssmE.label.pojo.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 // 实现接口
+@Repository
 public class UserDaoImpl implements UserDao, KK {
 
     @Override
