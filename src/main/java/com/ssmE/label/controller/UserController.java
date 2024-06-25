@@ -3,12 +3,13 @@ package com.ssmE.label.controller;
 import com.ssmE.label.pojo.User;
 import com.ssmE.label.server.Service;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 /**
  @Compontent 用于标记在Spring容器中的一个Bean，将其注册为Spring管理的Bean，一般作用于三层之外的内容使用此注解
  **/
-@Component
+@Controller
 public class UserController {
     private Service userService;
 
