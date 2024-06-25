@@ -10,7 +10,7 @@ import java.util.List;
 /**
  @Compontent 用于标记在Spring容器中的一个Bean，将其注册为Spring管理的Bean，一般作用于三层之外的内容使用此注解
  **/
-@Controller("userController1")
+@Controller("userController")
 public class UserController {
 
     private Service userService;

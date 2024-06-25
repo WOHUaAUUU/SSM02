@@ -7,14 +7,14 @@ public class SpringAnnioTest {
     public void test() {
         // 测试代码
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("sprinng-anno.xml");
-        System.out.println(context.getBean("userController1", UserController.class));
+        System.out.println(context.getBean("userController", UserController.class));
     }
 
-    @Test
-    public void test2() {
+
+    /*public void test2() {
         // 测试代码
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("sprinng-anno.xml");
-        UserController controller2 = context.getBean("userController1", UserController.class);
+        UserController controller2 = context.getBean("userController", UserController.class);
         controller2.listall();
-    }
+    }*/
 }
