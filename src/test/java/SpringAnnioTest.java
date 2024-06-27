@@ -10,7 +10,6 @@ public class SpringAnnioTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("sprinng-anno.xml");
         System.out.println(context.getBean("userController", UserController.class));
 
-        System.out.println(context.getBean("userController1", UserController.class));
     }
 
     @Test
