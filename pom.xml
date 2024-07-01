@@ -7,7 +7,10 @@
   <groupId>org.example</groupId>
   <artifactId>SSM03</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <modules>
+    <module>AOP_Test</module>
+  </modules>
+  <packaging>pom</packaging>
 
   <name>SSM03 Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
@@ -40,6 +43,11 @@
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
       <version>1.2.8</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.3.1</version>
     </dependency>
   </dependencies>
 
