@@ -16,8 +16,8 @@ public class ProxyFactory<T> {
         // 使用Proxy.newProxyInstance()方法创建代理对象
         ClassLoader classLoader = target.getClass().getClassLoader();
         Class<?>[] interfaces = target.getClass().getInterfaces();
-        Object o = Proxy.newProxyInstance(classLoader, interfaces, new invoke());
-        return (T) o;
+        T o = (T)Proxy.newProxyInstance(classLoader, interfaces, new invoke());
+        return  o;
     }
 
     public class invoke implements InvocationHandler {
