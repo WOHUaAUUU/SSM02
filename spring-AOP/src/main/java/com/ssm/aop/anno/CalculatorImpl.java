@@ -9,6 +9,7 @@ public class CalculatorImpl implements Calculator {
     @Override
     public int add(int i, int j) {
         int res = i+j;
+//        int a=10/0;
         return res;
     }
 
