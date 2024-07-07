@@ -12,3 +12,4 @@ public class AOPTest02 {
         System.out.println(calculator.add(1, 2));
     }
 }
+
