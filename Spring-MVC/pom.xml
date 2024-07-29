@@ -1,109 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 定义项目 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!-- 指定父项目 -->
     <parent>
         <artifactId>SSM03</artifactId>
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <!-- 指定项目版本 -->
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- 指定项目名称 -->
     <artifactId>Spring-MVC</artifactId>
-    <!-- 指定项目打包方式 -->
     <packaging>war</packaging>
 
-    <!-- 指定项目名称 -->
     <name>Spring-MVC Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
-    <!-- 指定项目属性 -->
     <properties>
-        <!-- 指定项目编码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- 指定项目编译版本 -->
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
-    <!-- 指定项目依赖 -->
     <dependencies>
-        <!-- 指定JUnit依赖 -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-        <!-- 指定Spring Context依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>6.0.6</version>
         </dependency>
-        <!-- 指定Spring Web MVC依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>6.0.6</version>
         </dependency>
-        <!-- 指定Jakarta Annotation依赖 -->
         <dependency>
-            <groupId>jakarta.annotation</groupId>
-            <artifactId>jakarta.annotation-api</artifactId>
-            <version>2.1.1</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+                <version>2.15.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.15.2</version>
         </dependency>
     </dependencies>
 
-    <!-- 指定项目构建 -->
     <build>
-        <!-- 指定项目最终名称 -->
         <finalName>Spring-MVC</finalName>
-        <!-- 指定插件管理 -->
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
-                <!-- 指定maven-clean-plugin插件 -->
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.1.0</version>
                 </plugin>
                 <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
-                <!-- 指定maven-resources-plugin插件 -->
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.0.2</version>
                 </plugin>
-                <!-- 指定maven-compiler-plugin插件 -->
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.0</version>
                 </plugin>
-                <!-- 指定maven-surefire-plugin插件 -->
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.22.1</version>
                 </plugin>
-                <!-- 指定maven-war-plugin插件 -->
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.2.2</version>
                 </plugin>
-                <!-- 指定maven-install-plugin插件 -->
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
                     <version>2.5.2</version>
                 </plugin>
-                <!-- 指定maven-deploy-plugin插件 -->
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.8.2</version>
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+
+        </plugins>
     </build>
 </project>
