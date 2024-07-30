@@ -5,6 +5,12 @@ public class User {
     private Integer age;
     private Double score;
 
+    public User(String name, Integer age, Double score) {
+        this.name = name;
+        this.age = age;
+        this.score = score;
+    }
+
     public User() {
     }
 
