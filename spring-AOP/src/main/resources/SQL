@@ -1,0 +1,26 @@
+SELECT
+  allmonths.month AS 月份,
+	round( ( SUM ( CAST ( 合格数量 AS FLOAT ) ) / SUM ( CAST ( 检验数量 AS FLOAT ) ) * 100 ), 2 ) 合格率,
+	99 AS 标准线
+FROM
+allmonths
+LEFT JOIN
+BISADMIN.MQM_MES_Inspection_Task_RPV
+ON allmonths.month = MONTH (MQM_MES_Inspection_Task_RPV.创建时间)
+WHERE
+	工厂名称 = '焊接分厂'
+	AND 生产班组 IS NOT NULL
+GROUP BY
+	allmonths.month
+
+select  STRING_AGG(人员名称,',') from  FRM_MQM_质检部加班人员维护  where  班组名称 = IF(''='8308 叶片分厂','叶片隔板检验组','焊接检验组') ;
+
+SELECT
+    (SELECT COUNT(*)
+     FROM [BISADMIN].[INF_PQC_INSPCHECKLIST]
+     WHERE YEAR(GETDATE()) = YEAR(RECORDTIME) AND CONVERT(VARCHAR, [RECORDTIME], 120) > SUBSTRING(CONVERT(VARCHAR, DATEADD(DAY, -5, CHECKERTIME), 120), 1, 7))/(SELECT COUNT(*)
+     FROM [BISADMIN].[INF_PQC_INSPCHECKLIST]
+     WHERE YEAR(GETDATE()) = YEAR(RECORDTIME) AND CHECKERTIME IS NOT NULL)
+    AS 合格率
+FROM
+    [BISADMIN].[INF_PQC_INSPCHECKLIST];

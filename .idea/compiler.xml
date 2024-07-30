@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SSM03" />
+        <module name="Spring-AOP" />
+        <module name="Spring-MVC" />
       </profile>
     </annotationProcessing>
   </component>
