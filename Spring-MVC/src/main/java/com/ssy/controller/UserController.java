@@ -1,6 +1,6 @@
-package com.controller;
+package com.ssy.controller;
 
-import com.pojo.User;
+import com.ssy.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

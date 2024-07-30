@@ -1,7 +1,7 @@
-package com.service.impl;
+package com.ssy.service.impl;
 
-import com.pojo.Schedule;
-import com.service.ScheduleService;
+import com.ssy.pojo.Schedule;
+import com.ssy.service.ScheduleService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

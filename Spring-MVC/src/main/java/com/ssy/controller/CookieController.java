@@ -1,4 +1,4 @@
-package com.controller;
+package com.ssy.controller;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;

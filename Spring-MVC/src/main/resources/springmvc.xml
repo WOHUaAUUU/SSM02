@@ -5,7 +5,7 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 <!-- 扫描com.controller包下的类，进行Spring容器管理 -->
-<context:component-scan base-package="com.controller"/>
+<context:component-scan base-package="com.ssy"/>
     <!-- 创建RequestMappingHandlerMapping和RequestMappingHandlerAdapterbean -->
 <!--    <bean  class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>-->
 <!--    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>-->
@@ -21,6 +21,24 @@
 
 <!--装配default-servlet-->
     <mvc:default-servlet-handler/>
+
+    <mvc:interceptors>
+<!-- 方法一通过Bean进行配置的拦截器，拦截所有的controller层的组件    -->
+<!--        <bean class="com.ssy.interceptor.MyInterceptor"/>-->
+<!-- 方法二通过配置文件进行配置的拦截器，拦截指定的controller层的组件 -->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/log/admin"/>-->
+<!--            <bean class="com.ssy.interceptor.MyInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+
+        <!-- 方法三通过配置文件进行配置的拦截器，拦截指定的controller层的组件-排除拦截 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/log/**"/>
+            <mvc:exclude-mapping path="/log/exit"/>
+            <bean class="com.ssy.interceptor.MyInterceptor"/>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
 
 
 </beans>

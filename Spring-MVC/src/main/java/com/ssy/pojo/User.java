@@ -1,27 +1,17 @@
-package com.pojo;
+package com.ssy.pojo;
 
-public class Person {
-    private  Integer eid;
+public class User {
     private String name;
     private Integer age;
     private Double score;
 
-    public Person(String name) {
+    public User(String name, Integer age, Double score) {
         this.name = name;
-    }
-
-    public Person(Integer age) {
         this.age = age;
+        this.score = score;
     }
 
-    public Person() {}
-
-    public Integer getEid() {
-        return eid;
-    }
-
-    public void setEid(Integer eid) {
-        this.eid = eid;
+    public User() {
     }
 
     public String getName() {
@@ -50,9 +40,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "eid=" + eid +
-                ", name='" + name + '\'' +
+        return "User{" +
+                "name='" + name + '\'' +
                 ", age=" + age +
                 ", score=" + score +
                 '}';
