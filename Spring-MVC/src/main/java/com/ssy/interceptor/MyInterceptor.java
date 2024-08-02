@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("preHandle");
+        System.out.println("preHandle拦截器执行了 ");
         return true;
     }
 

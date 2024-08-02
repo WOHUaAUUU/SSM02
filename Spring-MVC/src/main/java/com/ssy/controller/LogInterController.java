@@ -19,4 +19,10 @@ public class LogInterController {
         System.out.println("目标查看日志，拦截检查2。。。");
         return "查看日志成功 OK";
     }
+
+    @GetMapping("/reg/register")
+    public String interceptor3() {
+        System.out.println("目标查看日志，拦截检查3。。。");
+        return "查看日志成功 OK";
+    }
 }
