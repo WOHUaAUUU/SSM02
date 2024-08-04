@@ -43,6 +43,6 @@ public class jdbcTemplateTest {
     public void test4() {
         String sql = "SELECT * FROM students";
         List<Student> students = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Student.class));
-        students.forEach(System.out::println);
+//        students.forEach(System.out::println);
     }
 }

@@ -16,6 +16,7 @@
             <!-- 参数值 -->
             <param-value>classpath:springmvc.xml</param-value>
         </init-param>
+
         <!-- 启动加载优先级 -->
         <load-on-startup>1</load-on-startup>
         <!-- 文件上传配置 -->
@@ -36,6 +37,7 @@
         <!-- url模式 -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <!--    静态资源访问-->
 
 </web-app>
 
