@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssy.com.mapper.EmployeeMapper">
+    <select id="selectAll" resultType="ssy.com.pojo.Employee">
+        select emp_id empId , emp_name empName ,emp_salary empSalery  from t_emp
+    </select>
+    <select id="selectById" resultType="ssy.com.pojo.Employee">
+        select emp_id empId , emp_name empName ,emp_salary empSalery  from t_emp
+        where emp_id = #{id}
+    </select>
+    <insert id="insert">
+        insert into t_emp(emp_name,emp_salary) values(#{empName},#{empSalery})
+    </insert>
+    <update id="update">
+        update t_emp set emp_salary = #{empSalary} where emp_id = #{empID}
+    </update>
+    <select id="selectByIdAndName" resultType="ssy.com.pojo.Employee">
+        select emp_id empId , emp_name empName ,emp_salary empSalery  from t_emp
+        where emp_id = #{id} and emp_name = #{name}
+    </select>
+    <select id="selectCount" resultType="int">
+        select count(*) from t_emp
+    </select>
+    <select id="selectByMap" resultType="map">
+        select max(emp_salary)  , min(emp_salary) from t_emp
+    </select>
+</mapper>
