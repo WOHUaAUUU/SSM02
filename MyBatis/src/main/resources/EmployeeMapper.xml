@@ -10,7 +10,7 @@
         select emp_id empId , emp_name empName ,emp_salary empSalery  from t_emp
         where emp_id = #{id}
     </select>
-    <insert id="insert">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="empId">
         insert into t_emp(emp_name,emp_salary) values(#{empName},#{empSalery})
     </insert>
     <update id="update">

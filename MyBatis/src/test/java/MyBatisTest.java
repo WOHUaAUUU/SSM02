@@ -6,7 +6,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.jupiter.api.Test;
 import ssy.com.mapper.EmployeeMapper;
+import ssy.com.mapper.OrderMapper;
 import ssy.com.pojo.Employee;
+import ssy.com.pojo.Order;
 import ssy.com.util.SqlSessionUtil;
 
 import java.io.IOException;
@@ -25,16 +27,19 @@ public class MyBatisTest {
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
 // 获取EmployeeMapper实例
         EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
+        OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
 // 查询所有员工
         List<Employee> employees = mapper.selectAll();
         Employee byId = mapper.selectById(1);
-//        Integer insert = mapper.insert(new Employee(null, "王麻子", 30.47));
+//        Integer insert = mapper.insert(new Employee(null, "王小鱼", 36.47));
 //        Integer update = mapper.update(1, 99.99);
         HashMap<String, Object> map = new HashMap<>();
         map.put("id", 1);
         map.put("name", "张三");
         List<Employee> employees1 = mapper.selectByIdAndName(map);
         Integer integer = mapper.selectCount();
+        Order order = new Order(null,"订单一");
+        Integer insert = orderMapper.insert(order);
 
         Map<String, Object> stringObjectMap = mapper.selectByMap();
         Set<Map.Entry<String, Object>> entries = stringObjectMap.entrySet();
@@ -51,6 +56,7 @@ public class MyBatisTest {
             log.info(employee.toString());
         }
         log.info(integer.toString());
+        log.info(insert.toString());
 // 关闭SqlSession
         sqlSession.commit();
         sqlSession.close();
