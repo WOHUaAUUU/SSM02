@@ -24,5 +24,8 @@
     <mappers>
         <mapper resource="EmployeeMapper.xml"/>
         <mapper resource="OrderMapper.xml"/>
+        <mapper resource="OrdersMapper.xml"/>
+        <mapper resource="CustomerMapper.xml"/>
+        <mapper resource="StudentMapper.xml"/>
     </mappers>
 </configuration>

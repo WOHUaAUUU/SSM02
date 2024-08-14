@@ -9,8 +9,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
-    private Integer customerId;
-    private String customerName;
-    private List<Orders> orders;
+public class Teacher {
+    private int tId;
+    private String tName;
+    private List<Student> students;
 }
