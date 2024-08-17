@@ -10,6 +10,7 @@
         <module>spring-AOP</module>
         <module>Spring-MVC</module>
         <module>MyBatis</module>
+        <module>spring-springmvc-mybtis</module>
     </modules>
 
     <modelVersion>4.0.0</modelVersion>

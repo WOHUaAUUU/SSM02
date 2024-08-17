@@ -18,4 +18,11 @@ public interface EmployeeMapper {
     Integer selectCount();
 //    查询结果有多个，且不能封装成对象，使用map，返回多个聚合函数的结果
     Map<String,Object> selectByMap();
+
+    List<Employee>selectByCondition(Map<String,Object> map);
+    Integer updateByCondition(Map<String,Object> map);
+    List<Employee>selectByChooseCondition(Map<String,Object> map);
+    List<Employee>selectByForeach(Integer... ids);
+    Integer insertByForeach(List<Employee> list);
+    List<Employee> selectAllByPage();
 }
