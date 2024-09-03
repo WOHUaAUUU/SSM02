@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "spring.jdbc.datasource",
+      "type": "ssy.com.config.DataSourcePropertiesConfig",
+      "sourceType": "ssy.com.config.DataSourcePropertiesConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.jdbc.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "ssy.com.config.DataSourcePropertiesConfig"
+    },
+    {
+      "name": "spring.jdbc.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "ssy.com.config.DataSourcePropertiesConfig"
+    },
+    {
+      "name": "spring.jdbc.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "ssy.com.config.DataSourcePropertiesConfig"
+    },
+    {
+      "name": "spring.jdbc.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "ssy.com.config.DataSourcePropertiesConfig"
+    }
+  ],
+  "hints": []
+}

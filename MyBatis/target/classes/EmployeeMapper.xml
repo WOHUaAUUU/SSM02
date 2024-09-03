@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssy.com.mapper.EmployeeMapper">
+    <select id="selectAll" resultType="ssy.com.pojo.Employee">
+        select emp_id empId , emp_name empName ,emp_salary empSalery  from t_emp
+    </select>
+    <select id="selectById" resultType="ssy.com.pojo.Employee">
+        select emp_id empId , emp_name empName ,emp_salary empSalery  from t_emp
+        where emp_id = #{id}
+    </select>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="empId">
+        insert into t_emp(emp_name,emp_salary) values(#{empName},#{empSalery})
+    </insert>
+    <update id="update">
+        update t_emp set emp_salary = #{empSalary} where emp_id = #{empID}
+    </update>
+    <select id="selectByIdAndName" resultType="ssy.com.pojo.Employee">
+        select emp_id empId , emp_name empName ,emp_salary empSalery  from t_emp
+        where emp_id = #{id} and emp_name = #{name}
+    </select>
+    <select id="selectCount" resultType="int">
+        select count(*) from t_emp
+    </select>
+    <select id="selectByMap" resultType="map">
+        select max(emp_salary)  , min(emp_salary) from t_emp
+    </select>
+    <select id="selectByCondition" resultType="ssy.com.pojo.Employee">
+        select emp_id  , emp_name  ,emp_salary   from t_emp
+        <where>
+            <if test="empId != null">
+                emp_id = #{empId}
+            </if>
+            <if test="empName !=null">
+                and emp_name = #{empName}
+            </if>
+            <if test="empSalery !=null">
+                and emp_salary empSalery = #{empSalery}
+            </if>
+        </where>
+    </select>
+    <update id="updateByCondition">
+        update t_emp
+        <set>
+            <if test="empName !=null">
+                 emp_name = #{empName},
+            </if>
+            <if test="empSalery !=null">
+                 emp_salary = #{empSalery},
+            </if>
+            <if test="empId != null">
+                emp_id = #{empId}
+            </if>
+        </set>
+    where emp_id = #{empId}
+    </update>
+    <select id="selectByChooseCondition" resultType="ssy.com.pojo.Employee">
+        select emp_id  , emp_name  ,emp_salary   from t_emp
+        <where>
+            <choose>
+                <when test="empId != null">emp_id = #{empId}</when>
+                <when test="empName !=null">emp_name = #{empName}</when>
+                <when test="empSalery !=null">emp_salary = #{empSalery}</when>
+            </choose>
+        </where>
+    </select>
+    <select id="selectByForeach" resultType="ssy.com.pojo.Employee">
+        select emp_id  , emp_name  ,emp_salary   from t_emp
+        where emp_id in
+        <foreach collection="array" item="empId" separator="," open="(" close=")">
+            #{empId}
+        </foreach>
+
+    </select>
+    <insert id="insertByForeach">
+        insert into t_emp(emp_id,emp_name,emp_salary) values
+        <foreach collection="list" item="employee" separator=",">
+            (#{employee.empId},#{employee.empName},#{employee.empSalery})
+        </foreach>
+    </insert>
+    <select id="selectAllByPage" resultType="ssy.com.pojo.Employee">
+        select emp_id  , emp_name  ,emp_salary   from t_emp
+    </select>
+</mapper>

@@ -1,0 +1,19 @@
+spring:
+    datasource:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/ssy_mb?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+      username: root
+      password: 1230
+      type: com.zaxxer.hikari.HikariDataSource
+server:
+  port: 8001
+  servlet:
+    context-path: /dev
+mybatis:
+  type-aliases-package: ssy.com.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    map-underscore-to-camel-case: true
+    mapper-locations: classpath:mappers/*.xml
+
+

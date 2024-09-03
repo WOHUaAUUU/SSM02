@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssy.com.mapper.OrderInfoMapper">
+    <select id="selectBY" resultType="ssy.com.pojo.OrderInfo">
+        select * from order_info where reserve_date = #{date}
+    </select>
+
+</mapper>

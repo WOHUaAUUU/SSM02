@@ -11,6 +11,9 @@
         <module>Spring-MVC</module>
         <module>MyBatis</module>
         <module>spring-springmvc-mybtis</module>
+        <module>spring-boot</module>
+        <module>springboot-robot</module>
+        <module>robot-user</module>
     </modules>
 
     <modelVersion>4.0.0</modelVersion>

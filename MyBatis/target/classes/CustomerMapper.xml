@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssy.com.mapper.CustomerMapper">
+    <resultMap id="customerMap" type="ssy.com.pojo.Customer">
+        <id property="customerId" column="customer_id"/>
+        <result property="customerName" column="customer_name"/>
+        <collection property="orders" ofType="ssy.com.pojo.Orders">
+            <id property="orderId" column="order_id"/>
+            <result property="orderName" column="order_name"/>
+        </collection>
+    </resultMap>
+    <select id="selectCustomerAndOrder" resultMap="customerMap">
+        select order_id,order_name,t_customer.customer_id,customer_name
+        from t_customer join t_orders on t_orders.customer_id = t_customer.customer_id
+        where t_customer.customer_id=#{customerId}
+    </select>
+
+</mapper>
